@@ -1,2 +1,12 @@
-<h1>chart</h1>
-<div id="chartdiv" [style.width.%]="100" [style.height.px]="500"></div>
+<div fxLayout="column">
+    <div *ngIf="!errorMessage; else errorBlock">
+        <h1>chart</h1>
+        <div id="chartdiv" [style.width.%]="100" [style.height.px]="500"></div>
+
+        <div id="liveactivitydiv" [style.width.%]="100" [style.height.px]="500"></div>
+    </div>
+    <ng-template #errorBlock>
+        <h2>Error from server</h2>
+        <p>{{errorMessage}}</p>
+    </ng-template>
+</div>
